@@ -2,7 +2,8 @@
 
 This is a simple chatbot application built with Flask and integrated with the Langchain Ollama library. The application uses a language model to generate answers based on the conversation history and user questions.
 
-## Table of Contents
+## Table of Contents![ollama](https://github.com/user-attachments/assets/17c941fb-89ef-4cd1-8ca9-aab552b319a2)
+
 
 - [Features](#features)
 - [Installation](#installation)
