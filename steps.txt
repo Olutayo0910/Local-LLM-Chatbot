@@ -1,0 +1,12 @@
+
+# download Ollama
+# pull llama3
+# pip install langchain langchain-ollama ollama
+# from langchain_ollama import OllamaLLM
+# model = OllamaLLM(model="llama3")
+# invoke model
+
+To make it interractive
+
+# from langchain_core.prompts import ChatPromptTemplate
+# create template - context, question and answer

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <div class="container mx-auto mt-10">
+        <div class="bg-white shadow-md rounded p-6">
+            <h1 class="text-2xl font-bold mb-4">Chatbot</h1>
+            <div id="chat" class="mb-4 h-64 overflow-y-auto bg-gray-50 p-4 border border-gray-200 rounded"></div>
+            <div class="flex">
+                <input id="question" type="text" class="flex-grow p-2 border border-gray-300 rounded-l" placeholder="Type your question...">
+                <button id="send" class="p-2 bg-blue-500 text-white rounded-r">Send</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById("send").addEventListener("click", async () => {
+            const question = document.getElementById("question").value;
+            const response = await fetch("/ask", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ question })
+            });
+            const data = await response.json();
+            const chat = document.getElementById("chat");
+            chat.innerHTML += `<div><strong>You:</strong> ${question}</div>`;
+            chat.innerHTML += `<div><strong>Bot:</strong> ${data.response}</div>`;
+            document.getElementById("question").value = "";
+            chat.scrollTop = chat.scrollHeight;
+        });
+    </script>
+</body>
+</html>
