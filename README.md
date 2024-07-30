@@ -52,14 +52,3 @@ To set up the project locally, follow these steps:
 
 Open your web browser and go to http://127.0.0.1:5000 to interact with the chatbot.
 
-## Project Structure
-
-yourrepository/
-│
-├── app.py                  # Main Flask application
-├── templates/              # HTML templates
-│   └── index.html          # Main HTML template
-├── chatbot/                # Virtual environment directory
-├── README.md               # Project README file
-├── requirements.txt        # Python dependencies
-└── .gitignore              # Git ignore file
